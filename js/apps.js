@@ -44,12 +44,13 @@ const inputValue = () =>{
     }
 }   // Lyric Button Function
    const songLyric = async (artest,title) =>{
+    spinner()
     const geturl = await fetch(`https://api.lyrics.ovh/v1/${artest}/${title}`)
     const lyricUrl = await geturl.json()
     const lyricText = document.getElementById('lyric')
     lyricText.innerText ='';
     lyricText.innerText = lyricUrl.lyrics;
-
+    spinner()
    }
 // spinner loading
    function spinner(){
