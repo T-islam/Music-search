@@ -1,3 +1,14 @@
+// Enter Key Press
+
+const SearchButton = document.getElementById('SearchButton');
+const songInput = document.getElementById('song-valu')
+songInput.addEventListener('keyup',function(){
+    if(event.key==='Enter'){
+        SearchButton.click()
+        
+    }
+})
+
 // get input search Button Value
 const inputValue = () =>{
     const songInput = document.getElementById('song-valu').value;
