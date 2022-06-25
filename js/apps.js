@@ -9,6 +9,7 @@ const inputValue = () =>{
        
         
     }
+    spinner()
     songData(songInput)
     // SOng Data Info
     const songInfo = data =>{
@@ -17,12 +18,9 @@ const inputValue = () =>{
         data.forEach((song) => {
             const title =song.title;
             const artist =song.artist;
-            
             const preview = song.preview;
-          
             const artistName = song.artist.name;
             const songDetailsDiv = document.createElement('div')
-           
             songDetailsDiv.className = 'search-result col-md-8 mx-auto py-4';
             const songinfo = `
             
@@ -41,7 +39,7 @@ const inputValue = () =>{
             
             songDetailsDiv.innerHTML = songinfo;
             songDetails.appendChild(songDetailsDiv);
-            
+            spinner()
         })
     }
 }   // Lyric Button Function
@@ -51,8 +49,11 @@ const inputValue = () =>{
     const lyricText = document.getElementById('lyric')
     lyricText.innerText ='';
     lyricText.innerText = lyricUrl.lyrics;
-   
-    
 
+   }
+// spinner loading
+   function spinner(){
+    const loading = document.getElementById('loading-spinner')
+    loading.classList.toggle('d-none')
     
    }
